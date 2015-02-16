@@ -1,0 +1,2519 @@
+﻿<!DOCTYPE html>
+<html ng-app="Helios">
+<head>
+	<title>Helios</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="/images/Novomine_Logo.ico" />
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+	<link href="css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/lib/jquery.dataTables.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/compiled/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/compiled/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/compiled/icons.css" />
+	<link rel="stylesheet" type="text/css" href="StyleSheets/stylesheet2.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/compiled/form-showcase.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/compiled/tables.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/compiled/ui-elements.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/compiled/datatables.css" type="text/css" media="screen" />
+	
+    <!-- open sans font -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!-- lato font -->
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar navbar-inverse" role="banner" style="background:#F7F7F7">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" id="menu-toggler">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="helios.html" style="padding-top: 2px;padding-bottom: 2px;">
+                <img src="images/novomine.png" alt="logo" />
+            </a>
+        </div>
+        <ul class="nav navbar-nav pull-right hidden-xs">
+            <!--<li class="hidden-xs hidden-sm">
+                <input class="search" type="text" />
+            </li>-->
+            <!--<li class="notification-dropdown hidden-xs hidden-sm">
+                <a href="#" class="trigger">
+                    <i class="icon-warning-sign"></i>
+                    <span class="count">8</span>
+                </a>
+                <div class="pop-dialog">
+                    <div class="pointer right">
+                        <div class="arrow"></div>
+                        <div class="arrow_border"></div>
+                    </div>
+                    <div class="body">
+                        <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                        <div class="notifications">
+                            <h3>You have 6 new notifications</h3>
+                            <a href="#" class="item">
+                                <i class="icon-signin"></i> New user registration
+                                <span class="time"><i class="icon-time"></i> 13 min.</span>
+                            </a>
+                            <a href="#" class="item">
+                                <i class="icon-signin"></i> New user registration
+                                <span class="time"><i class="icon-time"></i> 18 min.</span>
+                            </a>
+                            <a href="#" class="item">
+                                <i class="icon-envelope-alt"></i> New message from Alejandra
+                                <span class="time"><i class="icon-time"></i> 28 min.</span>
+                            </a>
+                            <a href="#" class="item">
+                                <i class="icon-signin"></i> New user registration
+                                <span class="time"><i class="icon-time"></i> 49 min.</span>
+                            </a>
+                            <a href="#" class="item">
+                                <i class="icon-download-alt"></i> New order placed
+                                <span class="time"><i class="icon-time"></i> 1 day.</span>
+                            </a>
+                            <div class="footer">
+                                <a href="#" class="logout">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>-->
+            <!--<li class="notification-dropdown hidden-xs hidden-sm">
+                <a href="#" class="trigger">
+                    <i class="icon-envelope"></i>
+                </a>
+                <div class="pop-dialog">
+                    <div class="pointer right">
+                        <div class="arrow"></div>
+                        <div class="arrow_border"></div>
+                    </div>
+                    <div class="body">
+                        <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                        <div class="messages">
+                            <a href="#" class="item">
+                                <img src="img/contact-img.png" class="display" alt="user" />
+                                <div class="name">Alejandra Galván</div>
+                                <div class="msg">
+                                    There are many variations of available, but the majority have suffered alterations.
+                                </div>
+                                <span class="time"><i class="icon-time"></i> 13 min.</span>
+                            </a>
+                            <a href="#" class="item">
+                                <img src="img/contact-img2.png" class="display" alt="user" />
+                                <div class="name">Alejandra Galván</div>
+                                <div class="msg">
+                                    There are many variations of available, have suffered alterations.
+                                </div>
+                                <span class="time"><i class="icon-time"></i> 26 min.</span>
+                            </a>
+                            <a href="#" class="item last">
+                                <img src="img/contact-img.png" class="display" alt="user" />
+                                <div class="name">Alejandra Galván</div>
+                                <div class="msg">
+                                    There are many variations of available, but the majority have suffered alterations.
+                                </div>
+                                <span class="time"><i class="icon-time"></i> 48 min.</span>
+                            </a>
+                            <div class="footer">
+                                <a href="#" class="logout">View all messages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>-->
+			<li>
+				<a id="login_display" href="#" class="dropdown-toggle hidden-xs hidden-sm" style="color:#000000">
+					
+				</a>
+				
+			</li>
+			<li id="logout" class="dropdown" ng-controller="listOfProjects as projects">
+				<a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
+					<span id="proj_name" style="color:#000000"></span>
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li ng-repeat="project in projects.products"><a onclick="change_current_project(this);" value="{{project.id}}" attr_id="{{project.id}}">{{project.name}}</a></li>
+				</ul>
+            </li>
+            <!--<li class="settings hidden-xs hidden-sm">
+                <a href="personal-info.html" role="button">
+                    <i class="icon-cog"></i>
+                </a>
+            </li>-->
+            <li class="settings hidden-xs hidden-sm">
+                <a onclick="logout();" role="button" class="clickable">
+                    <i class="icon-share-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer" id="pointer_tab_-1">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="helios.html">
+                    <i class="icon-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>            
+            <li>
+				<div class="pointer" id="pointer_tab_0" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(0);">
+                    <i class="icon-signal"></i>
+                    <span>Solutions</span>
+                </a>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_1" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(1);">
+                    <i class="icon-group"></i>
+                    <span>Requirements</span>
+                </a>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_2" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(2);">
+                    <i class="icon-edit"></i>
+                    <span>Data items</span>
+                </a>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_3" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(3);">
+                    <i class="icon-picture"></i>
+                    <span>Dtm rules</span>
+                </a>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_4" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(4);">
+                    <i class="icon-calendar-empty"></i>
+                    <span>Pages</span>
+                </a>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_5" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a class="dropdown-toggle" href="#" onclick="change_tab(5);">
+                    <i class="icon-th-large"></i>
+                    <span>Admin</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="#" onclick="change_tab(6);">Projects</a></li>
+                    <li><a href="#" onclick="change_tab(7);">Users</a></li>
+					<li><a href="#" onclick="change_tab(8);">UserGroups</a></li>
+                </ul>
+            </li>
+            <li>
+				<div class="pointer" id="pointer_tab_6" style="display:none;">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#" onclick="change_tab(9);">
+                    <i class="icon-cog"></i>
+                    <span>My Info</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+        <!-- settings changer -->
+        <!--<div class="skins-nav">
+            <a href="#" class="skin first_nav selected">
+                <span class="icon"></span><span class="text">Default skin</span>
+            </a>
+            <a href="#" class="skin second_nav" data-file="css/compiled/skins/dark.css">
+                <span class="icon"></span><span class="text">Dark skin</span>
+            </a>
+        </div>-->
+
+        <!-- upper main stats -->
+        <div id="main-stats">
+            <div class="row stats-row">
+                <div class="col-md-3 col-sm-3 stat">
+                    <div class="data">
+                        Welcome to Helios
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end upper main stats -->
+		<div class="row" id="remarque" style="display:none;">
+			<div class="col-md-6" >
+				<div class="alert alert-info" >
+					<i class="icon-exclamation-sign"></i>
+					<p id="remarque_text"></p>
+				</div>
+				<div style="height:30px;"></div>
+			</div>
+		</div>
+		<div id="tabs-1-global" style="display:none;">
+			<div id="tabs-1" ng-controller="listOfSolutions as solutions" >
+				<div id="pad-wrapper">
+					<div id='solutions' class="table-wrapper products-table section" >
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Solutions</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								<input type="text" class="search" id="solution_search_keyword">
+								<a class="btn-flat success new-product" onclick='new_solution();'>+ Add solution</a>
+							</div>
+						</div>
+						<div class="row" ng-show="solutions.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-8">
+											Name
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Requirements
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="solution in solutions.products">
+										<td>
+											<a href="#" class="name" solution_name={{solution.name}} solution_ID={{solution.id}} solution_comment={{solution.objective}} onclick='edit_solution(this)'>{{solution.name}}</a>
+										</td>
+										<td class="description">
+											<a class="btn-flat info new-product" solution_name={{solution.name}} solution_ID={{solution.id}} solution_comment={{solution.objective}} onclick='edit_solution(this)'>Edit</a>
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" solution_name={{solution.name}} solution_ID={{solution.id}} solution_comment={{solution.objective}} onclick='list_requirements(this)'>List</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="solutions.multiples">
+							No solution for this project!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div id="tabs-1-edit" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>Edit solution : </h4>
+							<h3 id="h4_edit_solution"></h3>
+						</div>
+						<div style="height:30px;"></div>
+						<div class="col-md-8 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='solutionName' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<br /><br /><br />
+								 <div class="field-box">
+									<label>Objective :</label>
+									<div class="col-md-7">
+										<textarea id='solutionObjective' class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+								<input type='hidden' id='solution_ID' />
+								<a class="btn-glow success" onclick='save_solution();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_solution();'>Cancel</a>&nbsp;<a class="btn-glow inverse" onclick='delete_solution();'>Delete</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-1-new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New solution </h4>
+						</div>
+						<div style="height:30px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='solutionName_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<br /><br /><br />
+								<div class="field-box">
+									<label>Objective :</label>
+									<div class="col-md-7">
+										<textarea id='solutionObjective_new' class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+								<a class="btn-glow success" onclick='submit_new_solution();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_solution();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-2-global" style="display:none;">
+			<div id="tabs-2" ng-controller="listOfRequirements as requirements">
+				<div id="pad-wrapper">
+					<div id='requirements' class="table-wrapper products-table section">
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Requirements</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								Solution : 
+								<div class="ui-select" style="width:auto;">
+									<select id="select_requirements" ng-controller="listOfSolutionsForRequirements as solutions" onchange="change_list_of_requirements()" style="width:auto;">
+										<option value='0'>All</option>
+										<option ng-repeat="solution in solutions.products" value="{{solution.id}}">{{solution.name}}</option>
+									</select>
+								</div>
+								<input type="text" class="search" id="requirement_search_keyword" />
+								<a class="btn-flat success new-product" onclick='new_requirement();'>+ Add requirement</a>
+							</div>
+						</div>
+						<div class="row" ng-show="requirements.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-9">
+											Name
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Data items
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="requirement in requirements.products">
+										<td>
+											<a href="#" class="name" requirement_solution={{requirement.solutionID}} requirement_name={{requirement.name}} requirement_id={{requirement.id}} requirement_comment={{requirement.objective}} onclick='edit_requirement(this)'>{{requirement.name}}</a>
+										</td>
+										<td class="description">
+											<a class="btn-flat info new-product" requirement_solution={{requirement.solutionID}} requirement_name={{requirement.name}} requirement_id={{requirement.id}} requirement_comment={{requirement.objective}} onclick='edit_requirement(this)'>Edit</a>
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" requirement_solution={{requirement.solutionID}} requirement_id={{requirement.id}} onclick='list_DataItems(this)'>List</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="requirements.multiples">
+							No requirement for this solution!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div id="tabs-2-edit" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>Edit Requirement : </h4>
+							<h3 id="h4_edit_requirement"></h3>
+						</div>
+						<div style="height:20px;"></div>
+						
+						<div class="col-md-6 column">
+						Solution : 
+						<div class="ui-select" style="width:auto;">
+							<select id="edit_requirement_list_solutions" ng-controller="listOfSolutionsForEditRequirements as solutions" disabled>
+								<option value='0'>All</option>
+								<option id="{{solution.id}}" ng-repeat="solution in solutions.products" value="{{solution.id}}">{{solution.name}}</option>
+							</select>
+						</div>
+						<div style="height:20px;"></div>
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='requirement_text_edit' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<br /><br /><br />
+								 <div class="field-box">
+									<label>Comments :</label>
+									<div class="col-md-7">
+										<textarea id='requirementComment_edit' class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+								<input type='hidden' id='requirementID' value=''>
+								<a class="btn-glow success" onclick='save_requirement();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_requirement();'>Cancel</a>&nbsp;<a class="btn-glow inverse" onclick='delete_requirement();'>Delete</a>
+							</form>
+						</div>
+						<div class="col-md-4 column">
+							<form>
+								<h3>Data items </h3>
+								Link 
+								<div class="ui-select" style="width:auto;">
+									<select id='listOfDataItemsForRequirements' ng-controller='listOfDataItemsForRequirements as list_dataItems'>
+										<option ng-repeat='list_dataItem in list_dataItems.products' value="{{list_dataItem.id}}">{{list_dataItem.name}}</option>
+									</select>
+								</div>
+								<a class="btn-glow primary" onclick='add_new_link_requirement();'>Add link</a>
+							</form>
+							<div id="listOfDataItems_by_Requirement" ng-controller="listOfDataItems_by_Requirement as dataItems" class="table-wrapper products-table section">
+								<div class="row" ng-show="dataItems.multiples">
+									<table id='requirements_dataItems' class="table table-hover" >
+										<thead>
+											<tr>
+												<th class="col-md-3">
+													Name
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>Type
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- row -->
+											<tr class="first" ng-repeat="dataItem in dataItems.products">
+												<td>
+													<a href="#" class="name">{{dataItem.name}}</a>
+												</td>
+												<td>
+													<a href="#" class="name">{{dataItem.type}}</a>
+												</td>
+												<td class="description">
+													<a class="btn-flat info new-product" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}} onclick='edit_dataItem(this);'>Edit</a>
+												</td>
+												<td>
+													<a class="btn-flat primary new-product" dataItem_ID={{dataItem.id}} onclick='unlink_dataItem_requirement(this);'>Unlink</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div ng-hide="dataItems.multiples">
+									No dataItems already linked with this requirement!<br />Add a new one!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-2-new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New requirement </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							
+							<div style="height:20px;"></div>
+							<form>
+								<div class="field-box">
+									<label>Solution :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id="select_requirements_new" onchange='change_requirement_new()'>
+										</select>
+									</div>
+								</div>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='requirementName' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<br /><br /><br />
+								 <div class="field-box">
+									<label>Comments :</label>
+									<div class="col-md-7">
+										<textarea id='requirementComment' class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+								<a class="btn-glow success" onclick='submit_new_requirement();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_requirement();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-3-global" style="display:none;">
+			<div id="tabs-3" ng-controller="listOfDataItems as dataItems">
+				<div id="pad-wrapper">
+					<div id='dataItem' class="table-wrapper products-table section">
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Data items</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								Solution : 
+								<div class="ui-select" style="width:auto;">
+									<select id="select_solution_dataItem" ng-controller="listOfSolutionsForDataItems as solutions" onchange="change_dataItem_status()">
+										<option value='0'>All</option>
+										<option ng-repeat="solution in solutions.products" value="{{solution.id}}">{{solution.name}}</option>
+									</select>
+								</div>
+								Status :
+								<div class="ui-select" style="width:auto;">
+									<select id="select_status_dataItem" onchange="change_dataItem_status()">
+										<option value="0">All</option>
+										<option value="To discuss with client">To discuss with client</option>
+										<option value="Waiting for client implementation">Waiting for client implementation</option>
+										<option value="To implement by Novomine">To implement by Novomine</option>
+										<option value="To discuss within Novomine">To discuss within Novomine</option>
+										<option value="Implemented">Implemented</option>
+										<option value="Validated">Validated</option>
+									</select>
+								</div>
+								<input type="text" class="search" id="name_filter_dataItem" placeholder="type here a keyword">
+								<a class="btn-flat success new-product" onclick='new_dataItem();'>+ Add data item</a>
+							</div>
+						</div>
+						<div class="row" ng-show="dataItems.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-3">
+											Name
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>Type
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>Analytics type
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>Analytics ID
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Status
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Solution name
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="dataItem in dataItems.products| orderBy:solution_name:reverse">
+										<td>
+											<a href="#" class="name" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}}  class='clickable' onclick='edit_dataItem(this)'>{{dataItem.name}}</a>
+										</td>
+										<td class="description">
+											{{dataItem.type}}
+										</td class="description">
+										<td class="description">
+											{{dataItem.AnalyticsType}}
+										</td class="description">
+										<td class="description">
+											{{dataItem.AnalyticsID}}
+										</td>
+										<td class="description">
+											{{dataItem.status}}
+										</td>
+										<td class="description">
+											{{dataItem.solution_name}}
+										</td>
+										<td class="description">
+											<a class="btn-flat info new-product" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}}  class='clickable' onclick='edit_dataItem(this)'>Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="dataItems.multiples">
+							No dataItems for this solution!
+						</div>
+					</div>				
+				</div>
+			</div>
+				<div id="tabs-3-edit" style="display:none;" ng-controller="editDataItem as dataItem">
+					<div id="pad-wrapper" class="form-page">
+						<div class="row form-wrapper">
+						<!-- left column -->
+							<div class="col-md-6">
+								<h4>Edit data item</h4>
+							</div>
+							<div class="col-md-6">
+								<h4>Linked DTM rules</h4>
+							</div>
+							<div style="height:30px;"></div>
+							<div style="height:30px;"></div>
+							<div class="col-md-12 column">
+							<form ng-submit="reviewCtrl.addReview(dataItem)" ng-controller="ReviewController as reviewCtrl">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="field-box">
+											<label>Name :</label>
+											<div class="col-md-7">
+												<input class="form-control" type="text" ng-model="dataItem.products.Name" name="name_dataItem" id="name_dataItem" placeholder="Enter data item name" value="{{dataItem.products.Name}}"/>
+											</div>                            
+										</div>
+										<div class="field-box">
+											<label>Type :</label>
+											<div class="col-md-8">
+												<label class="radio">
+													<input type="radio" name="type_dataItem" id="type_dataItem" ng-model="dataItem.products.Type" value="M" ng-click="dataItem.products.AnalyticsType=''">
+													Metric
+												</label>
+												<label class="radio">
+													<input type="radio" name="type_dataItem" ng-model="dataItem.products.Type" id="type_dataItem" value="D" ng-click="dataItem.products.AnalyticsType=''">
+													Dimension
+												</label>
+											</div>                                
+										</div>
+										<div class="field-box"  ng-hide="dataItem.products.Type=='M'" id='dataItem_sampleValues_class'>
+											<label>Sample values :</label>
+											<div class="col-md-7">
+												<input class="form-control" type="text" ng-model="dataItem.products.SampleValues" name="sampleValues_dataItem" id="sampleValues_dataItem" placeholder="Enter an example" value="{{dataItem.products.SampleValues}}"/>
+											</div>                            
+										</div>
+										
+										<div class="field-box">
+											<label>Analytics type :</label>
+											<div class="col-md-8">
+												<label class="radio" ng-show="dataItem.products.Type=='D'">
+													<input type="radio" name="analyticsType_dataItem" id="analyticsType_dataItem" ng-model="dataItem.products.AnalyticsType" ng-click="dataItem.products.AnalyticsID=''" value="eVar">
+													eVar
+												</label>
+												<label class="radio" ng-show="dataItem.products.Type=='D'">
+													<input type="radio" name="analyticsType_dataItem" ng-model="dataItem.products.AnalyticsType" ng-click="dataItem.products.AnalyticsID=''" id="analyticsType_dataItem" value="Prop">
+													Prop
+												</label>
+												<label class="radio" ng-hide="dataItem.products.Type=='D'">
+													<input type="radio" name="analyticsType_dataItem" ng-model="dataItem.products.AnalyticsType" ng-click="dataItem.products.AnalyticsID=''" id="analyticsType_dataItem" value="Event">
+													Event
+												</label>
+												<label class="radio" ng-show="dataItem.products.Type=='D'">
+													<input type="radio" name="analyticsType_dataItem" ng-model="dataItem.products.AnalyticsType" ng-click="dataItem.products.AnalyticsID=''" id="analyticsType_dataItem" value="ListVar">
+													ListVar
+												</label>
+											</div>                                
+										</div>
+										<div class="field-box" id="div_dataItemAnalyticsIDEvar" ng-show="dataItem.products.AnalyticsType=='eVar' && dataItem.products.Type=='D'">
+											<label>Analytics ID :</label>
+											<div class="ui-select" style="width:auto;" ng-controller="listOfEvar_edit as anal_variables">
+												<select id='listEvarForEditDataItem' ng-model="dataItem.products.AnalyticsID">
+													<option value=""></option><option ng-repeat="n in [] | range:50" value="eVar{{n}}" id="editdataItemEvarOption_eVar{{n}}">eVar{{n}}</option>
+												</select>
+											</div>
+										</div>
+										<div class="field-box" id="div_dataItemAnalyticsIDEvent" ng-show="dataItem.products.AnalyticsType=='Event' && dataItem.products.Type=='M'">
+											<label >Analytics ID :</label>
+											<div class="ui-select" style="width:auto;" ng-controller="listOfEvent_edit as anal_variables">
+												<select id='listEventForEditDataItem' ng-model="dataItem.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="Event{{n}}" id="editdataItemEventOption_Event{{n}}">event{{n}}</option></select>
+											</div>
+										</div>
+										<div class="field-box" id="div_dataItemAnalyticsIDProp" ng-show="dataItem.products.AnalyticsType=='Prop' && dataItem.products.Type=='D'">
+											<label>Analytics ID :</label>
+											<div class="ui-select" style="width:auto;" ng-controller="listOfProp_edit as anal_variables">
+												<select id='listPropForEditDataItem' ng-model="dataItem.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="Prop{{n}}" id="editdataItemPropOption_Prop{{n}}">prop{{n}}</option></select>
+											</div>
+										</div>
+										<div class="field-box" id="div_dataItemAnalyticsIDListVar" ng-show="dataItem.products.AnalyticsType=='ListVar' && dataItem.products.Type=='D'">
+											<label>Analytics ID :</label>
+											<div class="ui-select" style="width:auto;" ng-controller="listOfListVar_edit as anal_variables">
+												<select id='listListVarForEditDataItem' ng-model="dataItem.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="ListVar{{n}}" id="editdataItemListVarOption_ListVar{{n}}">ListVar{{n}}</option></select>
+											</div>
+										</div>
+										
+										<div class="field-box" id='dataItem_metricType_class' ng-hide="dataItem.products.Type=='D'">
+											<label>Metric type :</label>
+											<div class="col-md-8">
+												<label class="radio">
+													<input type="radio" name="metricType_dataItem" id="metricType_dataItem" ng-model="dataItem.products.MetricType" value="Counter">
+													Counter
+												</label>
+												<label class="radio">
+													<input type="radio" name="metricType_dataItem" ng-model="dataItem.products.MetricType" id="metricType_dataItem" value="Currency">
+													Currency
+												</label>
+												<label class="radio">
+													<input type="radio" name="metricType_dataItem" ng-model="dataItem.products.MetricType" id="metricType_dataItem" value="Numeric">
+													Numeric
+												</label>
+											</div>                                
+										</div>
+										<div class="field-box" ng-show="(dataItem.products.AnalyticsType=='eVar'||dataItem.products.AnalyticsType=='ListVar') && dataItem.products.AnalyticsID!=''">
+											<label>Expiration :</label>
+											<div class="col-md-8">
+												<div class="ui-select" style="width:auto;">
+												<select id='eVarExpiration_dataItem_edit' name='eVarExpiration_dataItem_edit' ng-model="dataItem.products.eVarExpiration">
+													<option value='Visit'>Visit</option>
+													<option value='Hit'>Hit</option>
+													<option value='Never'>Never</option>
+													<option value='Minute'>Minute</option>
+													<option value='Hour'>Hour</option>
+													<option value='Day'>Day</option>
+													<option value='Week'>Week</option>
+													<option value='Month'>Month</option>
+													<option value='Quarter'>Quarter</option>
+													<option value='Year'>Year</option>
+													<option value='Purchase'>Purchase</option>
+													<option value='Product View'>Product View</option>
+													<option value='Cart Open'>Cart Open</option>
+													<option value='Cart Checkout'>Cart Checkout</option>
+													<option value='Cart Add'>Cart Add</option>
+													<option value='Cart Remove'>Cart Remove</option>
+													<option value='Cart View'>Cart View</option>
+													<option value='Custom'>Custom</option>
+												</select>
+											</div>
+											</div>                                
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType!='Event' && dataItem.products.AnalyticsID!=''">
+											<label>Enabled :</label>
+											<label class="checkbox-inline">
+											  <input type="checkbox" id="checkbox_enabled_edit" ng-checked="dataItem.products.enabled == '1'"/>
+											</label>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType!='ListVar' && dataItem.products.AnalyticsID!=''">
+											<label>Description :</label>
+											<div class="col-md-7">
+												<textarea class="form-control" rows="4" name="description_dataItem_edit" id="description_dataItem_edit" placeholder="Enter a description" ng-model="dataItem.products.description"></textarea>
+											</div>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='Prop' && dataItem.products.AnalyticsID!=''">
+											<label>List support :</label>
+											<label class="checkbox-inline">
+											  <input type="checkbox" id="checkbox_prop_list_support_edit" ng-checked="dataItem.products.ListSupport=='1'"/>
+											</label>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='Prop' && dataItem.products.AnalyticsID!=''">
+											<label>Display participation metrics :</label>
+											<label class="checkbox-inline">
+											  <input type="checkbox" id="checkbox_prop_participation_edit" ng-checked="dataItem.products.display_participation=='1'"/>
+											</label>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='Prop' && dataItem.products.AnalyticsID!=''">
+											<label>Path reports :</label>
+											<label class="checkbox-inline">
+											  <input type="checkbox" id="checkbox_prop_path_reports_edit" ng-checked="dataItem.products.pathReports=='1'"/>
+											</label>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='eVar' && dataItem.products.AnalyticsID!=''">
+											<label>Type :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItem_edit_evarType' name='dataItem_edit_evarType' ng-model="dataItem.products.eVarType"><option value='Text String'>Text String</option><option value='Counter'>Counter</option></select>
+											</div>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='eVar' && dataItem.products.AnalyticsID!=''">
+											<label>Allocation :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItem_edit_evarAllocation' name='dataItem_edit_evarAllocation' ng-model="dataItem.products.eVarAllocation"><option value='Most Recent'>Most Recent (Last)</option><option value='Original Value'>Original Value (First)</option><option value='Linear'>Linear</option></select>
+											</div>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='ListVar' && dataItem.products.AnalyticsID!=''">
+											<label>Value delimiter :</label>
+											<div class="col-md-7">
+												<input id='dataItem_ListVar_valueDelimiter_edit' class="form-control" type="text" ng-model="dataItem.products.value_delimiter"/>
+											</div>                            
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='ListVar' && dataItem.products.AnalyticsID!=''">
+											<label>Type :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItem_edit_ListVarAllocation' name='dataItem_edit_ListVarAllocation'ng-model="dataItem.products.allocation"><option value='Full'>Full</option><option value='Linear'>Linear</option></select>
+											</div>
+										</div>
+										<div class="field-box" ng-show="dataItem.products.AnalyticsType=='ListVar' && dataItem.products.AnalyticsID!=''">
+											<label>Max values :</label>
+											<div class="col-md-7">
+												<input id='dataItem_ListVar_maxValues_edit' class="form-control" type="text" ng-model="dataItem.products.maxValue"/>
+											</div>                            
+										</div>
+										<table class="table table-hover">
+											<div class="col-md-6">
+												<h3 id="td_table_dtm_edit"></h3><br />
+												<div class="form-group">
+													<label for="ruleType_dataItem">Rule type</label>
+													<select id="ruleType_dataItem" ng-model="dataItem.products.TriggerType">
+														<!--<option value="0"></option>-->
+														<option value="Page load" ng-selected="dataItem.products.TriggerType=='Page load'">Page load</option>
+														<option value="Event"  ng-selected="dataItem.products.TriggerType=='Event'">Event</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label for="ruleSelector_dataItem">Rule selector</label>
+													<input type="textarea" ng-model="dataItem.products.TriggerSelector" class="form-control" name="ruleSelector_dataItem" id="ruleSelector_dataItem" placeholder="Enter rule selector" value="{{dataItem.products.TriggerSelector}}"/>
+												</div>
+												<div class="form-group">
+													<label for="dataLocation_dataItem">Data Location</label>
+													<select id="dataLocation_dataItem" ng-model="dataItem.products.DataLocation">
+														<option value="Json - Datalayer" ng-selected="dataItem.products.DataLocation=='Json - Datalayer'">Json - Datalayer</option>
+														<option value="Url - parameter" ng-selected="dataItem.products.DataLocation=='Url - parameter'">Url - parameter</option>
+														<option value="Cookie" ng-selected="dataItem.products.DataLocation=='Cookie'">Cookie</option>
+														<option value="Css Selector" ng-selected="dataItem.products.DataLocation=='Css Selector'">Css Selector</option>
+														<option value="Custom script" ng-selected="dataItem.products.DataLocation=='Custom script'">Custom script</option>
+														<option value="Fixed value in DTM" ng-selected="dataItem.products.DataLocation=='Fixed value in DTM'">Fixed value in DTM</option>
+														<option value="Other" ng-selected="dataItem.products.DataLocation=='Other'">Other</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label for="dataSelector_dataItem">Data selector</label>
+													<input type="textarea" ng-model="dataItem.products.DataSelector" class="form-control" name="dataSelector_dataItem" id="dataSelector_dataItem" placeholder="Enter data selector" value="{{dataItem.products.DataSelector}}"/>
+												</div>
+											</div>
+											<div class="col-md-6" id="td_table_sdk_edit">
+												<h3>SDK</h3><br />
+												<div class="form-group">
+													<label for="methodType_dataItem">Method type</label>
+													<select id="methodType_dataItem" ng-model="dataItem.products.MethodType">
+														<option value="trackState"  ng-selected="dataItem.products.MethodType=='trackState'">trackState</option>
+														<option value="trackAction" ng-selected="dataItem.products.MethodType=='trackAction'">trackAction</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label for="Action_dataItem">Action/State</label>
+													<textarea ng-model="dataItem.products.Action" class="form-control" name="Action_dataItem" id="Action_dataItem" placeholder="Enter action/state">{{dataItem.products.Action}}</textarea>
+												</div>
+												<div class="form-group">
+													<label for="dataLocation_sdk_dataItem">Data Location</label>
+													<select id="dataLocation_sdk_dataItem" >
+														<option value="contextdata">contextdata</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label for="variableName_dataItem">Variable name</label>
+													<textarea ng-model="dataItem.products.VariableName" class="form-control" name="variableName_dataItem" id="variableName_dataItem" placeholder="Enter variable name">{{dataItem.products.VariableName}}</textarea>
+												</div>
+											</div>	
+										</table>
+										<div class="form-group">
+											<label for="status_dataItem">Status</label>
+											<select id="status_dataItem" ng-model="dataItem.products.Status">
+												<option value="0"></option>
+												<option value="To discuss with client" ng-selected="dataItem.products.Status=='To discuss with client'">To discuss with client</option>
+												<option value="Waiting for client implementation" ng-selected="dataItem.products.Status=='Waiting for client implementation'">Waiting for client implementation</option>
+												<option value="To implement by Novomine" ng-selected="dataItem.products.Status=='To implement by Novomine'">To implement by Novomine</option>
+												<option value="To discuss within Novomine" ng-selected="dataItem.products.Status=='To discuss within Novomine'">To discuss within Novomine</option>
+												<option value="Implemented" ng-selected="dataItem.products.Status=='Implemented'">Implemented</option>
+												<option value="Validated" ng-selected="dataItem.products.Status=='Validated'">Validated</option>
+											</select>
+										</div>
+										<div class="field-box">
+											<label>Comments :</label>
+											<div class="col-md-7">
+												<textarea id='comments_dataItem' class="form-control" rows="4" ng-model="dataItem.products.Comments" placeholder="Enter comments"></textarea>
+											</div>
+										</div>
+										
+										<input type="submit" id="submit" class="btn-glow success" value="Save" />
+										<a class="btn-glow primary" onclick='cancel_dataItem();'>Close</a>&nbsp;<a class="btn-glow inverse" dataItem_ID={{dataItem.products.id}} onclick='delete_data_item(this);'>Delete</a>
+									</div>
+									<div class="col-md-6">
+										<input type='hidden' value='' id='dataItemID_link' />
+										<form>
+											Link 
+											<div class="ui-select" style="width:auto;">
+												<select id='link_dataItem_dtmRules' ng-controller='listOfDtmRulesForDataItem as dtmRules_list'>
+													<option ng-repeat='dtmRule_list in dtmRules_list.products' value="{{dtmRule_list.id}}">{{dtmRule_list.type + ':' + dtmRule_list.name}}</option>
+												</select>
+											</div>&nbsp;
+											<a class="btn-glow primary" onclick='add_new_link_dataItem_dtmRule();'>Add link</a>
+											&nbsp;
+											<a class="btn-glow info" onclick='new_dtmRule();'>Create a new rule</a>
+											<br />
+										</form>
+										<h3>Rules</h3>
+										<div id='table_link_dtmRule_dataItem' ng-controller="listOfDtmRulesByDataItem as dtmRules" class="table-wrapper products-table section" style="margin-top: 10px;">
+											<div class="row" ng-show="dtmRules.multiples">
+												<table class="table table-hover" >
+													<thead>
+														<tr>
+															<th class="col-md-3">
+																Rule type
+															</th>
+															<th class="col-md-3">
+																<span class="line"></span>Name
+															</th>
+															<th class="col-md-3">
+																<span class="line"></span>DTM link
+															</th>
+															<th class="col-md-2">
+																<span class="line"></span>
+															</th>
+															<th class="col-md-2">
+																<span class="line"></span>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- row -->
+														<tr class="first" ng-repeat="dtmRule in dtmRules.products">
+															<td class="description">
+																<a>{{dtmRule.RuleType}}</a>
+															</td>
+															<td class="description">
+																<a>{{dtmRule.name}}</a>
+															</td>
+															<td class="description">
+																<a></a>
+															</td>
+															<td class="description">
+																<a class="btn-flat info new-product" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.RuleType}} dtm_RuleID={{dtmRule.RuleID}} onclick='edit_dtmRule(this)'>Edit</a>
+															</td>
+															<td>
+																<a class="btn-flat primary new-product" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.RuleType}} dtm_RuleID={{dtmRule.RuleID}} dataItem_ID={{dtmRules.dataItemID}} onclick='unlink_dtmRule_dataItem(this)'>Unlink</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div ng-hide="dtmRules.multiples">
+												No rule already linked with this requirement!<br />Add a new one!
+											</div>
+										</div>
+										<h3>Data elements</h3>
+										<div id='table_link_dtmRule_dataItem_dataElements' ng-controller="listOfDtmRules_dataElements_ByDataItem as dtmRules" class="table-wrapper products-table section" style="margin-top: 10px;">
+											<div class="row" ng-show="dtmRules.multiples">
+												<table class="table table-hover" >
+													<thead>
+														<tr>
+															<th class="col-md-3">
+																Rule type
+															</th>
+															<th class="col-md-3">
+																<span class="line"></span>Name
+															</th>
+															<th class="col-md-3">
+																<span class="line"></span>DTM link
+															</th>
+															<th class="col-md-2">
+																<span class="line"></span>
+															</th>
+															<th class="col-md-2">
+																<span class="line"></span>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- row -->
+														<tr class="first" ng-repeat="dtmRule in dtmRules.products">
+															<td class="description">
+																<a>{{dtmRule.RuleType}}</a>
+															</td>
+															<td class="description">
+																<a>{{dtmRule.name}}</a>
+															</td>
+															<td class="description">
+																<a ng-show="dtmRule.DtmUrlPrefix!=''" href="{{dtmRule.DtmUrlPrefix+'/data_elements/'+dtmRule.RuleID+'/edit'}}" target="_blank">Go to DTM</a>
+															</td>
+															<td class="description">
+																<a class="btn-flat info new-product" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.RuleType}} dtm_RuleID={{dtmRule.RuleID}} onclick='edit_dtmRule(this)'>Edit</a>
+															</td>
+															<td>
+																<a class="btn-flat primary new-product" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.RuleType}} dtm_RuleID={{dtmRule.RuleID}} dataItem_ID={{dtmRules.dataItemID}} onclick='unlink_dtmRule_dataItem(this)'>Unlink</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div ng-hide="dtmRules.multiples">
+												No rule already linked with this requirement!<br />Add a new one!
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="video_dataItem">Video</label>
+											<input type="textarea" ng-model="dataItem.products.Video" class="form-control" name="video_dataItem" id="video_dataItem" placeholder="Enter video link" value="{{dataItem.products.Video}}"/>
+										</div>
+										<div class="form-group">
+											<label for="DtmRulesComments_dataItem">Comments about dtm rules</label>
+											<input type="textarea" ng-model="dataItem.products.DtmRulesComments" class="form-control" name="DtmRulesComments_dataItem" id="DtmRulesComments_dataItem" placeholder="Enter comments" value="{{dataItem.products.DtmRulesComments}}"/>
+										</div>
+									</div>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-3-new" style="display:none;" ng-controller="new_dataItem as dataItems">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New data item</h4>
+						</div>
+						<div style="height:30px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='dataItemName' ng-model="dataItems.products.name" class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Type :</label>
+									<div class="col-md-8">
+										<label class="radio">
+											<input type="radio" name="dataItemType" ng-model="dataItems.products.type" id="dataItemType" value="Dimension" ng-click="dataItems.products.AnalyticsType=''" checked>
+											Dimension
+										</label>
+										<label class="radio">
+											<input type="radio" name="dataItemType" ng-model="dataItems.products.type" id="dataItemType" value="Metric" ng-click="dataItems.products.AnalyticsType=''">
+											Metric
+										</label>
+									</div>                                
+								</div>
+								<div class="field-box" id='dataItemSampleValues_div' ng-hide="dataItems.products.type=='Metric'">
+									<label>Sample :</label>
+									<div class="col-md-7">
+										<input id='dataItemSampleValues' ng-model="dataItems.products.sample"  class="form-control" type="text" />
+									</div>
+								</div>
+								<div class="field-box">
+									<label>Analytics type :</label>
+									<div class="col-md-8">
+										<label class="radio" ng-hide="dataItems.products.type=='Metric'">
+											<input type="radio" ng-model="dataItems.products.AnalyticsType" id='dataItemAnalyticsType' name='dataItemAnalyticsType' value='Prop' ng-click="dataItems.products.AnalyticsID=''">
+											Prop
+										</label>
+										<label class="radio" ng-hide="dataItems.products.type=='Metric'">
+											<input id='dataItemAnalyticsType' ng-model="dataItems.products.AnalyticsType" type='radio' name='dataItemAnalyticsType' value='eVar' ng-click="dataItems.products.AnalyticsID=''">
+											eVar
+										</label>
+										<label class="radio" ng-show="dataItems.products.type=='Metric'">
+											<input type="radio" ng-model="dataItems.products.AnalyticsType" id='dataItemAnalyticsType' name='dataItemAnalyticsType' value='Event' ng-click="dataItems.products.AnalyticsID=''">
+											Event
+										</label>
+										<label class="radio" ng-hide="dataItems.products.type=='Metric'">
+											<input type="radio" name='dataItemAnalyticsType' ng-model="dataItems.products.AnalyticsType" id='dataItemAnalyticsType' value='ListVar' ng-click="dataItems.products.AnalyticsID=''">
+											ListVar
+										</label>
+									</div>                                
+								</div>
+								<div class="field-box" id="div_dataItemAnalyticsIDEvar" ng-show="dataItems.products.AnalyticsType=='eVar'">
+									<label>Analytics ID :</label>
+									<div class="ui-select" style="width:auto;" ng-controller="listOfEvar_new as anal_variables">
+										<select id='dataItemAnalyticsIDEvar' ng-model="dataItems.products.AnalyticsID">
+											<option value=""></option><option ng-repeat="n in [] | range:50" value="eVar{{n}}" id="dataItemEvarOption_eVar{{n}}">eVar{{n}}</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-box" id="div_dataItemAnalyticsIDEvent" ng-show="dataItems.products.AnalyticsType=='Event'">
+									<label >Analytics ID :</label>
+									<div class="ui-select" style="width:auto;" ng-controller="listOfEvent_new as anal_variables">
+										<select id='dataItemAnalyticsIDEvent' ng-model="dataItems.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="Event{{n}}" id="dataItemEventOption_Event{{n}}">event{{n}}</option></select>
+									</div>
+								</div>
+								<div class="field-box" id="div_dataItemAnalyticsIDProp" ng-show="dataItems.products.AnalyticsType=='Prop'">
+									<label>Analytics ID :</label>
+									<div class="ui-select" style="width:auto;" ng-controller="listOfProp_new as anal_variables">
+										<select id='dataItemAnalyticsIDProp' ng-model="dataItems.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="Prop{{n}}" id="dataItemPropOption_Prop{{n}}">prop{{n}}</option></select>
+									</div>
+								</div>
+								<div class="field-box" id="div_dataItemAnalyticsIDListVar" ng-show="dataItems.products.AnalyticsType=='ListVar'">
+									<label>Analytics ID :</label>
+									<div class="ui-select" style="width:auto;" ng-controller="listOfListVar_new as anal_variables">
+										<select id='dataItemAnalyticsIDListVar' ng-model="dataItems.products.AnalyticsID"><option value=""></option><option ng-repeat="n in [] | range:50" value="ListVar{{n}}" id="dataItemListVarOption_ListVar{{n}}">ListVar{{n}}</option></select>
+									</div>
+								</div>
+								<div class="field-box" id='dataItemMetricType_div' ng-show="dataItems.products.type=='Metric'">
+									<label>Metric type :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id='dataItemMetricType'>
+											<option value="Counter">Counter</option>
+											<option value="Currency">Currency</option>
+											<option value="Numeric">Numeric</option>
+										</select>
+									</div>
+									<!--<label>Metric type :</label>
+									<div class="col-md-8">
+										<label class="radio">
+											<input type="radio" name="dataItemMetricType" id="dataItemMetricType" value="Counter" checked>
+											Counter
+										</label>
+										<label class="radio">
+											<input type="radio" name="dataItemMetricType" id="dataItemMetricType" value="Currency">
+											Currency
+										</label>
+										<label class="radio">
+											<input type="radio" name="dataItemMetricType" id="dataItemMetricType" value="Numeric">
+											Numeric
+										</label>
+									</div>    -->                            
+								</div>
+								<div class="field-box" ng-show="(dataItems.products.AnalyticsType=='eVar'||dataItems.products.AnalyticsType=='ListVar') && dataItems.products.AnalyticsID!=''"">
+									<label>eVar expiration :</label>
+									<div class="col-md-8">
+										<div class="ui-select" style="width:auto;">
+										<select id='eVarExpiration_dataItem_new' name='eVarExpiration_dataItem_new'>
+											<option value='Visit'>Visit</option>
+											<option value='Hit'>Hit</option>
+											<option value='Never'>Never</option>
+											<option value='Minute'>Minute</option>
+											<option value='Hour'>Hour</option>
+											<option value='Day'>Day</option>
+											<option value='Week'>Week</option>
+											<option value='Month'>Month</option>
+											<option value='Quarter'>Quarter</option>
+											<option value='Year'>Year</option>
+											<option value='Purchase'>Purchase</option>
+											<option value='Product View'>Product View</option>
+											<option value='Cart Open'>Cart Open</option>
+											<option value='Cart Checkout'>Cart Checkout</option>
+											<option value='Cart Add'>Cart Add</option>
+											<option value='Cart Remove'>Cart Remove</option>
+											<option value='Cart View'>Cart View</option>
+											<option value='Custom'>Custom</option>
+										</select>
+									</div>
+									</div>                                
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsID!='' && dataItems.products.AnalyticsID!=''"">
+									<label>Enabled :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="checkbox_enabled_new" />
+									</label>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsID!='' && dataItems.products.AnalyticsID!=''"">
+									<label>Description :</label>
+									<div class="col-md-7">
+										<textarea class="form-control" rows="4" name="description_dataItem_new" id="description_dataItem_new" ng-model="dataItems.products.description" placeholder="Enter a description"></textarea>
+									</div>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='Prop' && dataItems.products.AnalyticsID!=''">
+									<label>List support :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="checkbox_prop_list_support_new" />
+									</label>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='Prop' && dataItems.products.AnalyticsID!=''"">
+									<label>Display participation metrics :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="checkbox_prop_participation_new" />
+									</label>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='Prop' && dataItems.products.AnalyticsID!=''"">
+									<label>Path reports :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="checkbox_prop_path_reports_new" />
+									</label>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='eVar' && dataItems.products.AnalyticsID!=''"">
+									<label>Type :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id='dataItem_new_evarType' name='dataItem_new_evarType'><option value='Text String'>Text String</option><option value='Counter'>Counter</option></select>
+									</div>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='eVar' && dataItems.products.AnalyticsID!=''"">
+									<label>Allocation :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id='dataItem_new_evarAllocation' name='dataItem_new_evarAllocation'><option value='Most Recent'>Most Recent (Last)</option><option value='Original Value'>Original Value (First)</option><option value='Linear'>Linear</option></select>
+									</div>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='ListVar' && dataItems.products.AnalyticsID!=''"">
+									<label>Value delimiter :</label>
+									<div class="col-md-7">
+										<input id='dataItem_ListVar_valueDelimiter_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='ListVar' && dataItems.products.AnalyticsID!=''"">
+									<label>Type :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id='dataItem_new_ListVarAllocation' name='dataItem_new_ListVarAllocation'><option value='Full'>Full</option><option value='Linear'>Linear</option></select>
+									</div>
+								</div>
+								<div class="field-box" ng-show="dataItems.products.AnalyticsType=='ListVar' && dataItems.products.AnalyticsID!=''"">
+									<label>Max values :</label>
+									<div class="col-md-7">
+										<input id='dataItem_ListVar_maxValues_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<!--<div class="field-box" ng-show="dataItems.products.AnalyticsType=='eVar'">
+									<label>Reset :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="checkbox_reset_eVar_new" />
+									</label>
+								</div>-->
+								<table class="table table-hover">
+									<div class="col-md-6 column">
+										<h3 id="td_table_web_new"></h3><br/>
+										<div class="field-box">
+											<label>Rule type :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItemRuleType' name='dataItemRuleType'><option value='0'></option><option value='Page load'>Page load</option><option value='Event'>Event</option></select>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>Rule selector :</label>
+											<div class="col-md-7">
+												<textarea class="form-control" id="dataItemRuleSelector" rows="4"></textarea>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>Data location :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItemDataLocation'>
+													<option value='0'></option><option value='Json - Datalayer'>Json - Datalayer</option><option value='Url - parameter'>Url - parameter</option><option value='Cookie'>Cookie</option><option value='Css Selector'>Css Selector</option><option value='Custom script'>Custom script</option><option value='Fixed value in DTM'>Fixed value in DTM</option><option value='Other'>Other</option>
+												</select>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>Data selector :</label>
+											<div class="col-md-7">
+												<input class="form-control" type="text" id='dataItemDataSelector' name='dataItemDataSelector'/>
+											</div>                            
+										</div>
+									</div>
+									<div class="col-md-6 column" id="td_table_sdk_new">
+										<h3>SDK</h3><br/>
+										<div class="field-box">
+											<label>Method type :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id='dataItem_new_methodType'>
+													<option value="0"></option>
+													<option value="trackState">trackState</option>
+													<option value="trackAction">trackAction</option>
+												</select>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>State/Action :</label>
+											<div class="col-md-7">
+												<textarea class="form-control" id="dataItem_new_state" rows="4"></textarea>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>Data location :</label>
+											<div class="ui-select" style="width:auto;">
+												<select id="dataItem_dataLocation_new">
+													<option value="contextdata">contextdata</option>
+												</select>
+											</div>
+										</div>
+										<div class="field-box">
+											<label>Variable name :</label>
+											<div class="col-md-7">
+												<input class="form-control" type="text" id="dataItem_new_variableName"/>
+											</div>                            
+										</div>
+									</div>
+									<div class="col-md-6 column" id="td_table_sdk_new_message">
+										<h3>SDK not available</h3>
+									</div>
+								</table>
+								<div class="field-box">
+									<label>Status :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id='dataItemStatus'>
+											<option value='To discuss with client'>To discuss with client</option><option value='Waiting for client implementation'>Waiting for client implementation</option><option value='To implement by Novomine'>To implement by Novomine</option><option value='To discuss within Novomine'>To discuss within Novomine</option><option value='Implemented'>Implemented</option><option value='Validated'>Validated</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-box">
+									<label>Comments :</label>
+									<div class="col-md-7">
+										<textarea class="form-control" id="dataItemComments" rows="4"></textarea>
+									</div>
+								</div>
+								<a class="btn-glow success" onclick='submit_new_dataItem();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_dataItem();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-4-global" style="display:none;">
+			<div id="tabs-4" ng-controller="listOfDtmRules as dtmRules">	
+				<div id="pad-wrapper">
+					<div id='dtm_rules' class="table-wrapper products-table section" >
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>DTM rules</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								Type : 
+								<div class="ui-select" style="width:auto;">
+									<select onchange="change_dtm_type_select();" id="change_dtm_type">
+										<option selected="selected" value="0">All</option>
+										<option value="data_elements">data_elements</option>
+										<option value="event_based_rules">event_based_rules</option>
+										<option value="page_load_rules">page_load_rules</option>
+										<option value="site_catalyst_accounts">site_catalyst_accounts</option>
+									</select>
+								</div>
+								<input type="text" class="search" id="word_dtmRule" />
+								<a class="btn-flat success new-product" onclick='new_dtmRule();'>+ Add rule</a>
+							</div>
+						</div>
+						<div class="row" ng-show="dtmRules.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-8">
+											Name
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>Rule Type
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="dtmRule in dtmRules.products">
+										<td>
+											<a href="#" class="name" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.type}} dtm_RuleID={{dtmRule.RuleID}} onclick='edit_dtmRule(this)'>{{dtmRule.name}}</a>
+										</td>
+										<td class="description">
+											{{dtmRule.type}}
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" dtm_name={{dtmRule.name}} dtm_ID={{dtmRule.id}} dtm_type={{dtmRule.type}} dtm_RuleID={{dtmRule.RuleID}} onclick='edit_dtmRule(this)'>Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="dtmRules.multiples">
+							No rule here!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div id="tabs-4-edit" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>Edit DTM rule </h4>
+						</div>
+						<div style="height:20px;"></div>
+						<input type='hidden' id='dtm_id' value=''>
+						<div class="col-md-6 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='dtm_rule_name' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Type :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id="change_dtm_type_edit">
+											<option value="data_elements">data_elements</option>
+											<option value="event_based_rules">event_based_rules</option>
+											<option value="page_load_rules">page_load_rules</option>
+											<option value="site_catalyst_accounts">site_catalyst_accounts</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-box">
+									<label>ID in DTM :</label>
+									<div class="col-md-7">
+										<input id='dtm_rule_ID' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='save_dtm_rule();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_dtm_rule();'>Cancel</a>&nbsp;<a class="btn-glow inverse" onclick='delete_dtm_rule();'>Delete</a>
+							</form>
+						</div>
+						<div class="col-md-6 column">
+							<form>
+								<h3>Data items </h3>
+								Link : &nbsp;
+								<div class="ui-select" style="width:auto;">
+									<select id='listOfDataItemsForDtmRules' ng-controller='listOfDataItemsForDtmRule as list_dataItems'>
+										<option ng-repeat='list_dataItem in list_dataItems.products' value="{{list_dataItem.id}}">{{list_dataItem.name}}</option>
+									</select>
+								</div>
+								<a class="btn-glow primary" onclick='add_new_link_dtmRule();'>Add link</a>
+							</form>
+							<div id="dtm_rules_data_item" ng-controller="listOfDataItems_by_dtmRule as list_dataItems" class="table-wrapper products-table section">
+								<div class="row" ng-show="list_dataItems.multiples">
+									<table id='dtmRules_dataItems' class="table table-hover" >
+										<thead>
+											<tr>
+												<th class="col-md-3">
+													Name
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>Type
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- row -->
+											<tr class="first" ng-repeat="dataItem in list_dataItems.products">
+												<td>
+													<a href="#" class="name">{{dataItem.name}}</a>
+												</td>
+												<td>
+													<a href="#" class="name">{{dataItem.type}}</a>
+												</td>
+												<td class="description">
+													<a class="btn-flat info new-product" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}} onclick='edit_dataItem(this);'>Edit</a>
+												</td>
+												<td>
+													<a class="btn-flat primary new-product" dataItem_ID={{dataItem.id}} onclick='unlink_dataItem_dtmRule(this);'>Unlink</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div ng-hide="list_dataItems.multiples">
+									No dataItems already linked with this rule!<br />Add a new one!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-4-new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New DTM rule </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='dtm_rule_name_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Type :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id="change_dtm_type_new">
+											<option value="data_elements">data_elements</option>
+											<option value="event_based_rules">event_based_rules</option>
+											<option value="page_load_rules">page_load_rules</option>
+											<option value="site_catalyst_accounts">site_catalyst_accounts</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-box">
+									<label>ID in DTM :</label>
+									<div class="col-md-7">
+										<input id='dtm_rule_ID_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='submit_new_dtmRule();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_dtm_rule_new();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-5-global" style="display:none;">
+			<div id="tabs-5" ng-controller="listOfPages as pages">
+				<div id="pad-wrapper">
+					<div id='pages_list' class="table-wrapper products-table section" >
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Pages</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								<!--<input type="text" class="search">-->
+								<a class="btn-flat success new-product" onclick='new_page();'>+ Add page</a><!--<a class="btn-flat info new-product" onclick='import_csv();'>import csv</a>-->
+							</div>
+						</div>
+						<div class="row" ng-show="pages.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-2">
+											Name
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Digital channel
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>L1
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>L2
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>L3
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>Content name
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="page in pages.products">
+										<td>
+											<a href="#" class="name" page_name={{page.Name}} page_ID={{page.id}} page_ContentName={{page.ContentName}} page_DigitalChannel={{page.DigitalChannel}} page_L1={{page.L1}} page_L2={{page.L2}} page_L3={{page.L3}} onclick='edit_page(this)'>{{page.Name}}</a>
+										</td>
+										<td class="description">
+											{{page.DigitalChannel}}
+										</td>
+										<td class="description">
+											{{page.L1}}
+										</td>
+										<td class="description">
+											{{page.L2}}
+										</td><td class="description">
+											{{page.L3}}
+										</td>
+										<td class="description">
+											{{page.ContentName}}
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" page_name={{page.Name}} page_ID={{page.id}} page_ContentName={{page.ContentName}} page_DigitalChannel={{page.DigitalChannel}} page_L1={{page.L1}} page_L2={{page.L2}} page_L3={{page.L3}} onclick='edit_page(this)'>Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="pages.multiples">
+							No page here!
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+			<div id="tabs-5-edit" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>Edit page </h4>
+						</div>
+						<div style="height:30px;">
+							
+						</div>
+						<div class="col-md-6 column">
+							<form>
+								<input type='hidden' size='80' id='page_id' value=''>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='page_name' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Digital channel :</label>
+									<div class="col-md-7">
+										<input id='page_DigitalChannel' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L1 :</label>
+									<div class="col-md-7">
+										<input id='page_L1' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L2 :</label>
+									<div class="col-md-7">
+										<input id='page_L2' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L3 :</label>
+									<div class="col-md-7">
+										<input id='page_L3' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Content name :</label>
+									<div class="col-md-7">
+										<input id='page_ContentName' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='save_page();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_page_edit();'>Cancel</a>
+							</form>
+						</div>
+						<div class="col-md-6 column">
+							<form>
+								<h3>Data items </h3>
+								Link : &nbsp;
+								<div class="ui-select" style="width:auto;">
+									<select id='listOfDataItemsForPages' ng-controller='listOfDataItemsForPage as list_dataItems'>
+										<option ng-repeat='list_dataItem in list_dataItems.products' value="{{list_dataItem.id}}">{{list_dataItem.name}}</option>
+									</select>
+								</div>
+								<a class="btn-glow primary" onclick='add_new_link_dataItem_page();'>Add link</a>
+							</form>
+							<div id="listOfDataItems_by_Page" ng-controller="listOfDataItems_by_Page as dataItems" class="table-wrapper products-table section">
+								<div class="row" ng-show="dataItems.multiples">
+									<table id='page_data_item' class="table table-hover" >
+										<thead>
+											<tr>
+												<th class="col-md-3">
+													Name
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>Type
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+												<th class="col-md-3">
+													<span class="line"></span>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- row -->
+											<tr class="first" ng-repeat="dataItem in dataItems.products">
+												<td>
+													<a href="#" class="name">{{dataItem.name}}</a>
+												</td>
+												<td class="description">
+													{{dataItem.type}}
+												</td>
+												<td class="description">
+													<a class="btn-flat info new-product" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}} onclick='edit_dataItem(this);'>Edit</a>
+												</td>
+												<td>
+													<a class="btn-flat primary new-product" dataItem_name={{dataItem.name}} dataItem_ID={{dataItem.id}} onclick='unlink_dataItem_page(this);'>Unlink</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div ng-hide="dataItems.multiples">
+									No data item linked here!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-5-new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New page </h4>
+						</div>
+						<div style="height:30px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='pageName_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Digital channel :</label>
+									<div class="col-md-7">
+										<input id='pageDigitalChannel_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L1 :</label>
+									<div class="col-md-7">
+										<input id='pageL1_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L2 :</label>
+									<div class="col-md-7">
+										<input id='pageL2_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>L3 :</label>
+									<div class="col-md-7">
+										<input id='pageL3_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Content name :</label>
+									<div class="col-md-7">
+										<input id='pageContentName_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='submit_new_page();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_new_page();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="tabs-6-global" style="display:none;">
+			
+			<div id="tabs-6">
+				<div id="pad-wrapper">
+					<div class="row section btns">
+						<div class="col-md-5">
+							<div class="row ctrls">
+								<div class="btn-glow" onclick="open_projects();">Projects</div>
+								<div class="btn-glow" onclick="open_users();">Users</div>
+								<div class="btn-glow" onclick="open_groups();">Groups</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-projects" style="display:none;">
+				<div id="pad-wrapper">
+					<div id='table_project_list' class="table-wrapper products-table section" ng-controller='listOfAllProjects as projects'>
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Projects</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								<input type="text" class="search">
+								<a class="btn-flat success new-product" onclick='create_new_project();'>+ Add project</a>
+								<a class="btn-flat info new-product" onclick='cancel_project();'>Back</a>
+							</div>
+						</div>
+						<div class="row" ng-show="projects.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-3">
+											Name
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="project in projects.products">
+										<td>
+											<a href="#" class="name">{{project.name}}</a>
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" project_ID={{project.id}} onclick='edit_project(this);'>Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="projects.multiples">
+							No project!
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-projects_edit" style="display:none;" ng-controller="editProject as project">
+				<div id="pad-wrapper" class="form-page">
+						<div class="row form-wrapper">
+						<!-- left column -->
+							<div class="col-md-6">
+								<h4>Edit project</h4>
+							</div>
+							<div style="height:30px;"></div>
+							<div style="height:30px;"></div>
+							<div class="col-md-12 column">
+					<form ng-submit="reviewCtrl.addReview_project(project)" ng-controller="ReviewController as reviewCtrl">
+						<div class="row">
+							<div class="col-md-6 column">
+								
+								<input type="hidden" id="project_id_edit">
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input class="form-control" type="text" ng-model="project.products.name" name="name_project" id="name_project" placeholder="Enter project name" value="{{project.products.name}}" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Type :</label>
+									<div class="col-md-8">
+										<label class="radio">
+											<input type="radio" value="Web" ng-model="project.products.Type" name="type_project">
+											Web
+										</label>
+										<label class="radio">
+											<input type="radio" value="Web+App" ng-model="project.products.Type" name="type_project">
+											Web + App
+										</label>
+										<label class="radio">
+											<input type="radio" value="App" ng-model="project.products.Type" name="type_project">
+											App
+										</label>
+									</div>                                
+								</div>
+								<div class="field-box">
+									<label>Uses DTM :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="dtm_project" name="dtm_project" value="1" />
+									</label>
+								</div>
+								<div class="field-box">
+									<label>Url staging :</label>
+									<div class="col-md-7">
+										<input class="form-control" type="text" ng-model="project.products.UrlStaging" name="stagingUrl_project" id="stagingUrl_project" placeholder="Enter project url" value="{{project.products.UrlStaging}}" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Url production :</label>
+									<div class="col-md-7">
+										<input id='prodUrl_project' class="form-control" type="text" ng-model="project.products.UrlProduction" name="prodUrl_project" placeholder="Enter project url" value="{{project.products.UrlProduction}}" />
+									</div>                            
+								</div>
+								<input type="submit" class="btn-glow success" onclick="submit_edit_project();" value="Save" />
+								<a class="btn-glow primary" onclick='cancel_edit_project();'>Cancel</a>
+							</div>
+							<div class="row section btns" style="margin-top:0px;padding-top:0px;">
+								<div class="col-md-6">	
+									<div id="menu_permissions" class="row ctrls">
+										<ul class="nav nav-tabs">
+										  <li class="active"><a href="#tabs-permissions">Permissions</a></li>
+										  <li><a href="#tabs-amc">AMC</a></li>
+										  <li><a href="#tabs-dtm">DTM</a></li>
+										</ul>
+										<div class="tab-content">
+											<div id="tabs-permissions" class="tab-pane active">
+												<h3>Permissions</h3><br />
+												<table id="list_user_projects_table" class="table-bordered" ng-controller="listOfUsersByProject as users">
+												<tr>
+													<td>User name</td><td></td>
+												</tr>
+												<tr ng-repeat='user in users.products'>
+													<td>{{user.LastName}}, {{user.FirstName}}</td>
+													<td><span class="clickable" user_ID_link={{user.id}} onclick="unlinck_user_project(this);">Remove<span></td>
+												</tr>
+												</table>
+												<select id="link_user_project" ng-controller="listOfUsersForProjects as users">
+													<option ng-repeat="user in users.products" value="{{user.id}}">
+														{{user.LastName}}, {{user.FirstName}}
+													</option>
+												</select>
+												<!--<button onclick="add_user_to_project();">Add user</button>-->
+												<a href="#" onclick="add_user_to_project();">Add user</a>
+											</div>
+											<div id="tabs-amc" class="tab-pane">
+												<h3>AMC</h3><br />
+												<div class="form-group">
+													<label for="amcLoginCompany_project">Login company</label>
+													<input type="text" ng-model="project.products.AmcLoginCompany" class="form-control" name="amcLoginCompany_project" id="amcLoginCompany_project" placeholder="Enter a login company" value="{{project.products.AmcLoginCompany}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcReportsuiteStaging_project">Reportsuite staging</label>
+													<input type="text" ng-model="project.products.ReportSuiteStaging" class="form-control" name="amcReportsuiteStaging_project" id="amcReportsuiteStaging_project" placeholder="Enter a reportsuite staging" value="{{project.products.ReportSuiteStaging}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcReportsuiteProd_project">Reportsuite production</label>
+													<input type="text" ng-model="project.products.ReportSuiteProduction" class="form-control" name="amcReportsuiteProd_project" id="amcReportsuiteProd_project" placeholder="Enter a reportsuite production" value="{{project.products.ReportSuiteProduction}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcVisitorNamespace_project">Visitor namespace</label>
+													<input type="text" ng-model="project.products.VisitorNamespace" class="form-control" name="amcVisitorNamespace_project" id="amcVisitorNamespace_project" placeholder="Enter a visitor namespace" value="{{project.products.VisitorNamespace}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcTrackingServer_project">Tracking server</label>
+													<input type="text" ng-model="project.products.TrackingServer" class="form-control" name="amcTrackingServer_project" id="amcTrackingServer_project" placeholder="Enter a tracking server" value="{{project.products.TrackingServer}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcUrlPrefix_project">AMC Url prefix</label>
+													<input type="text" ng-model="project.products.AmcUrlPrefix" class="form-control" name="amcUrlPrefix_project" id="amcUrlPrefix_project" placeholder="Enter a url prefix" value="{{project.products.AmcUrlPrefix}}"/>
+												</div>
+												<h2>AMC Web API</h2>
+												<div class="form-group">
+													<label for="amcUsername_project">Username</label>
+													<input type="text" ng-model="project.products.AmcApiUsername" class="form-control" name="amcUsername_project" id="amcUsername_project" placeholder="Enter a username" value="{{project.products.AmcApiUsername}}"/>
+												</div>
+												<div class="form-group">
+													<label for="amcSharedSecret_project">Shared secret</label>
+													<input type="text" ng-model="project.products.AmcApiSharedSecret" class="form-control" name="amcSharedSecret_project" id="amcSharedSecret_project" placeholder="Enter a shared secret" value="{{project.products.AmcApiSharedSecret}}"/>
+												</div>
+											</div>
+											<div id="tabs-dtm" class="tab-pane">
+												<h3>DTM</h3><br />
+												<div class="form-group">
+													<label for="dtmUrlPrefix_project">DTM Url prefix</label>
+													<input type="text" ng-model="project.products.DtmUrlPrefix" class="form-control" name="dtmUrlPrefix_project" id="dtmUrlPrefix_project" value="{{project.products.DtmUrlPrefix}}"/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</form>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-projects_new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New project </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<div style="height:20px;"></div>
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='project_name_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Type :</label>
+									<div class="col-md-8">
+										<label class="radio">
+											<input type="radio" name="project_type_new" id="project_type_new" value="Web" checked>
+											Web
+										</label>
+										<label class="radio">
+											<input type="radio" name="project_type_new" id="project_type_new" value="App">
+											App
+										</label>
+										<label class="radio">
+											<input type="radio" name="project_type_new" id="project_type_new" value="Web+App">
+											Web + App
+										</label>
+									</div>                                
+								</div>
+								<div class="field-box">
+									<label>DTM :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="project_dtm_new" value="1">
+									</label>
+								</div>
+								<div class="field-box">
+									<label>Staging url :</label>
+									<div class="col-md-7">
+										<input id='project_stagingUrl_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Production url :</label>
+									<div class="col-md-7">
+										<input id='project_productionUrl_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='save_new_project();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_new_project();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-users" style="display:none;">
+				<div id="pad-wrapper">
+					<div id="list_users" ng-controller="listOfUsers as users" class="table-wrapper products-table section">
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Users</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								<input type="text" class="search">
+								<a class="btn-flat success new-product" onclick='add_new_user();'>+ Add user</a>
+								<a class="btn-flat info new-product" onclick='cancel_user();'>Back</a>
+							</div>
+						</div>
+						<div class="row" ng-show="users.multiples">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-3">
+											Name
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>First Name
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>Last Name
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>Failed logins
+										</th>
+										<th class="col-md-1">
+											<span class="line"></span>Lockout
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>Lockout time
+										</th>
+										<th class="col-md-2">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="user in users.products">
+										<td>
+											<a href="#" class="name">{{user.email}}</a>
+										</td>
+										<td class="description">
+											{{user.FirstName}}
+										</td>
+										<td class="description">
+											{{user.LastName}}
+										</td>
+										<td class="description">
+											{{user.failedLogin}}
+										</td>
+										<td class="description">
+											<input type="checkbox" disabled ng-checked="user.lockout=='1'">
+										</td>
+										<td class="description">
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" user_ID_edit={{user.id}} user_email_edit={{user.email}} user_firstName_edit={{user.FirstName}} user_lastName_edit={{user.LastName}} user_lockout_counter_edit={{user.failedLogin}} user_lockout_edit={{user.lockout}} user_groupID_edit={{user.userGroupID}} onclick="edit_user(this);">Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div ng-hide="users.multiples">
+							No users!
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-users_new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New user </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<div style="height:20px;"></div>
+							<form>
+								<div class="field-box">
+									<label>Email :</label>
+									<div class="col-md-7">
+										<input id='user_mail_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Password :</label>
+									<div class="col-md-7">
+										<input id='user_password_new' placeholder="Leave blank if you do not want to change it" class="form-control" type="password" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>First Name :</label>
+									<div class="col-md-7">
+										<input id='user_firstName_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Last Name :</label>
+									<div class="col-md-7">
+										<input id='user_lastName_new' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Group :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id="user_group_new" ng-controller="listOfUserGroupsForUserNew as groups">
+											<option value="{{group.id}}" ng-repeat="group in groups.products">{{group.name}}</option>
+										</select>
+									</div>
+								</div>
+								
+								<a class="btn-glow success" onclick='save_new_user();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_new_user();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-users_edit" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+						<div class="col-md-12">
+							<h4>Edit user </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<div style="height:20px;"></div>
+							<form>
+								<input type="hidden" id="user_id_edit" />
+								<div class="field-box">
+									<label>Email :</label>
+									<div class="col-md-7">
+										<input id='user_mail_edit' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Password :</label>
+									<div class="col-md-7">
+										<input id='user_password_edit' placeholder="Leave blank if you do not want to change it" class="form-control" type="password" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>First Name :</label>
+									<div class="col-md-7">
+										<input id='user_firstName_edit' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Last Name :</label>
+									<div class="col-md-7">
+										<input id='user_lastName_edit' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<div class="field-box">
+									<label>Group :</label>
+									<div class="ui-select" style="width:auto;">
+										<select id="user_group_edit" ng-controller="listOfUserGroupsForUserNew as groups">
+											<option value="{{group.id}}" ng-repeat="group in groups.products">{{group.name}}</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-box">
+									<label>Failed login counter :</label>
+									<div class="col-md-7">
+										<input class="form-control inline-input" id='user_failed_counter_edit' type="text" readonly="readonly">
+									</div>
+								</div>
+								<div class="field-box">
+									<label>Lockout :</label>
+									<label class="checkbox-inline">
+									  <input type="checkbox" id="user_lockout_edit" value="1">
+									</label>
+								</div>
+								<a class="btn-glow success" onclick='save_user_edit();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_edit_user();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-usersGroups" style="display:none;">
+				<div id="pad-wrapper">
+					<div  id="table_list_userGroups" ng-controller="listOfUserGroups as groups" class="table-wrapper products-table section">
+						<div class="row head">
+							<div class="col-md-12">
+								<h4>Groups</h4>
+							</div>
+						</div>
+						<div class="row filter-block">
+							<div class="pull-right">
+								<input type="text" class="search">
+								<a class="btn-flat success new-product" onclick='new_group();'>+ Add group</a>
+								<a class="btn-flat info new-product" onclick='cancel_groups();'>Back</a>
+							</div>
+						</div>
+						<div class="row">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-md-3">
+											Name
+										</th>
+										<th class="col-md-3">
+											<span class="line"></span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- row -->
+									<tr class="first" ng-repeat="group in groups.products">
+										<td>
+											<a href="#" class="name">{{group.name}}</a>
+										</td>
+										<td>
+											<a class="btn-flat primary new-product" group_id_edit="{{group.id}}">Edit</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-6-usersGroups_new" style="display:none;">
+				<div id="pad-wrapper" class="form-page">
+					<div class="row form-wrapper">
+					<!-- left column -->
+						<div class="col-md-12">
+							<h4>New group </h4>
+						</div>
+						<div style="height:20px;">
+							
+						</div>
+						<div class="col-md-8 column">
+							<div style="height:20px;"></div>
+							<form>
+								<div class="field-box">
+									<label>Name :</label>
+									<div class="col-md-7">
+										<input id='name_new_group' class="form-control" type="text" />
+									</div>                            
+								</div>
+								<a class="btn-glow success" onclick='submit_new_group();'>Save</a>&nbsp;<a class="btn-glow primary" onclick='cancel_new_group();'>Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div id="loading_image">
+		<p class="text-center">Loading<br />
+		<i class="fa fa-spinner fa-spin"></i></p>
+	</div>
+	<script>
+		if (window.location.protocol != "https:"){
+			window.location.assign("https://helios.novomine.com/helios.html");
+		}
+	</script>
+	<!-- scripts -->
+	
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+	<script src="js/jquery.dataTables.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+	<script src="js/novomine/novomine.js"></script>
+	<script src="js/novomine/solution.js"></script>
+	<script src="js/novomine/project.js"></script>
+	<script src="js/novomine/dataItem.js"></script>
+	<script src="js/novomine/requirement.js"></script>
+	<script src="js/novomine/link.js"></script>
+	<script src="js/novomine/dtmRule.js"></script>
+	<script src="js/novomine/page.js"></script>
+	<script src="js/novomine/user.js"></script>
+	<script src="js/novomine/group.js"></script>
+	<script src="js/novomine/app.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+	
+    <script type="text/javascript">
+        $(function () {
+
+            // jQuery Knobs
+            $(".knob").knob();
+
+
+
+            // jQuery UI Sliders
+            $(".slider-sample1").slider({
+                value: 100,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample2").slider({
+                range: "min",
+                value: 130,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample3").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 40, 170 ],
+            });
+
+            
+
+            // jQuery Flot Chart
+            var visits = [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]];
+            var visitors = [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]];
+
+            /*var plot = $.plot($("#statsChart"),
+                [ { data: visits, label: "Signups"},
+                 { data: visitors, label: "Visits" }], {
+                    series: {
+                        lines: { show: true,
+                                lineWidth: 1,
+                                fill: true, 
+                                fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+                             },
+                        points: { show: true, 
+                                 lineWidth: 2,
+                                 radius: 3
+                             },
+                        shadowSize: 0,
+                        stack: true
+                    },
+                    grid: { hoverable: true, 
+                           clickable: true, 
+                           tickColor: "#f9f9f9",
+                           borderWidth: 0
+                        },
+                    legend: {
+                            // show: false
+                            labelBoxBorderColor: "#fff"
+                        },  
+                    colors: ["#a7b5c5", "#30a0eb"],
+                    xaxis: {
+                        ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
+                               [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
+                        font: {
+                            size: 12,
+                            family: "Open Sans, Arial",
+                            variant: "small-caps",
+                            color: "#697695"
+                        }
+                    },
+                    yaxis: {
+                        ticks:3, 
+                        tickDecimals: 0,
+                        font: {size:12, color: "#9da3a9"}
+                    }
+                 });*/
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y - 30,
+                    left: x - 50,
+                    color: "#fff",
+                    padding: '2px 5px',
+                    'border-radius': '6px',
+                    'background-color': '#000',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+            }
+
+            var previousPoint = null;
+            $("#statsChart").bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(0),
+                            y = item.datapoint[1].toFixed(0);
+
+                        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+                        showTooltip(item.pageX, item.pageY,
+                                    item.series.label + " of " + month + ": " + y);
+                    }
+                }
+                else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+        });
+		/*$(document).ready(function() {
+            $('#dataItem').dataTable({
+                "sPaginationType": "full_numbers"
+            });
+        });*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.clickable{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.no-close .ui-dialog-titlebar-close {display: none }

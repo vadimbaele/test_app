@@ -1,0 +1,92 @@
+ul.a {
+    list-style-type: circle;
+}
+
+div.cookie{
+	display:none;
+}
+
+body{
+	background-color: #EAEAEA;
+	//display: table;
+}
+
+div#content{
+	background-color: #FFFFFF;
+	margin: auto;
+	width: 90%;
+	height: 60%;
+	margin-top:10%;
+	margin-bottom:20%;
+	text-align: center;
+	vertical-align: middle;
+	//display: table-cell;
+	font-size: 80%;
+}
+
+h1{
+	position: relative;
+	top: 20px;
+}
+
+div.class1{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+}
+div.class2{
+	position: relative;
+	//top: 50%;
+	//transform: translateY(-50%);
+	top: 10%;
+	display: none;
+}
+div#logout{
+	float: right;
+	position: relative;
+	top: 30px;
+}
+div#remarque{
+	margin-left: 10%;
+	display:none;
+	position: relative;
+	top: 15%;
+	//top: 65%;
+	//transform: translateY(-80%);
+	background-color: red;
+	height: 40px;
+	width: 80%;
+	padding-top: 10px;
+}
+
+button.button_logout{
+	float: right;
+}
+
+div#login_display{
+	float: left;
+	margin-right: 20px;
+}
+
+/*div#menu div div{
+	max-height:600px;
+	overflow-y:auto;
+}*/
+
+table.table-tabs{
+	border-style: solid;
+    border-width: 3px;
+	
+}
+
+img.logo{
+	float: left;
+}
+
+.clickable{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.no-close .ui-dialog-titlebar-close {display: none }
